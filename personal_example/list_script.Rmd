@@ -1,0 +1,72 @@
+---
+title: "example"
+author: "Jack Biggs"
+date: "22/02/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressWarnings(suppressPackageStartupMessages(library(ggplot2)))
+suppressWarnings(suppressPackageStartupMessages(library(dplyr)))
+suppressWarnings(suppressPackageStartupMessages(library(leaflet)))
+suppressWarnings(suppressPackageStartupMessages(library(DT)))
+suppressWarnings(suppressPackageStartupMessages(library(stringr)))
+library(knitr)
+library(markdown)
+library(rmarkdown)
+
+
+trade_groups <- c("Firefighter", "Milkman", "Electrician")
+
+
+trade_list <- list()
+
+for(i in 1:length(trade_groups)){ 
+  
+  a <- runif(100)
+  b <- rnorm(300)
+  c <- rbinom(1,2,i/10)
+  
+  name <- paste("trade_group_", trade_groups[i])
+  list <- list(uniform = a, normal = b, binomial = c)
+  trade_list[[name]] <- list}
+```
+
+
+run report for  the current list in the rmarkdown file 
+
+```{r, include=FALSE}
+list <- trade_list[trade_element]
+```
+
+
+
+
+first element of the list
+
+```{r}
+ list[[1]]$uniform
+
+```
+
+
+second element of the list 
+
+```{r}
+ list[[1]]$binomial
+
+```
+
+third element of the list 
+
+```{r}
+ list[[1]]$normal
+
+```
+
+
+
+
+
+
